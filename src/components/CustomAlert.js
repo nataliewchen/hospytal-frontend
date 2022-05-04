@@ -11,6 +11,7 @@ const CustomAlert = () => {
 
   const getAlert = async() => {
     const response = await axios.get(`${apiUrl}alert/`, { withCredentials: true });
+    console.log('alert', response.data);
     setAlert({
       active: true,
       type: response.data.success ? 'success' : 'error',
