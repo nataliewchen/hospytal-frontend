@@ -1,12 +1,44 @@
+$base: rgb(148, 125, 211);
+$base-light: rgb(245, 244, 248);
+$font: "Mulish", sans-serif;
+
+@mixin mq($breakpoint) {
+  @if $breakpoint==xs {
+    @media only screen and (max-width: 600px) {
+      @content;
+    }
+  }
+  @if $breakpoint==sm {
+    @media only screen and (min-width: 600px) {
+      @content;
+    }
+  }
+  @if $breakpoint==md {
+    @media only screen and (min-width: 900px) {
+      @content;
+    }
+  }
+  @if $breakpoint==lg {
+    @media only screen and (min-width: 1200px) {
+      @content;
+    }
+  }
+  @if $breakpoint==xl {
+    @media only screen and (min-width: 1400px) {
+      @content;
+    }
+  }
+}
+
 html,
 body {
   min-height: 100vh;
-  background-color: #f5f4f8;
+  background-color: $base-light;
 }
 
 body {
   margin: 0;
-  font-family: "Mulish", sans-serif !important;
+  font-family: $font !important;
   font-weight: 600 !important;
   text-align: center;
   overflow-y: visible;
@@ -26,7 +58,7 @@ li,
 .MuiFormLabel-root,
 .MuiTablePagination-selectLabel,
 .MuiTablePagination-displayedRows {
-  font-family: "Mulish", sans-serif !important;
+  font-family: $font !important;
   font-weight: 600 !important;
 }
 
@@ -37,17 +69,13 @@ button {
 main {
   margin: 0 auto 10em;
   width: 90%;
-}
 
-@media only screen and (min-width: 900px) {
-  main {
+  @include mq(md) {
     width: 80%;
   }
-}
 
-@media only screen and (min-width: 1200px) {
-  main {
-    width: 60%;
+  @include mq(lg) {
+    width: 60%
   }
 }
 
@@ -61,7 +89,7 @@ li {
 }
 
 .bg-base {
-  background-color: #947dd3 !important;
+  background-color: $base !important;
 }
 
 .hover:hover {
@@ -69,13 +97,14 @@ li {
 }
 
 .text-link:hover {
-  color: #947dd3;
+  color: $base;
 }
 
 .white {
   color: white;
   background-color: transparent;
 }
+
 
 .person-list .MuiDataGrid-row:hover, .MuiAutocomplete-option:hover, .MuiMenuItem-root:hover {
   cursor: pointer;
@@ -86,13 +115,12 @@ li {
   padding: 10px !important;
 }
 
+
 .MuiDialogContent-root .MuiTableContainer-root .MuiTableRow-root .table-row-header {
   font-weight: 800 !important;
   width: 50%;
-}
-
-@media only screen and (min-width: 600px) {
-  .MuiDialogContent-root .MuiTableContainer-root .MuiTableRow-root .table-row-header {
+ 
+  @include mq(sm) {
     text-align: right !important;
   }
 }
@@ -102,9 +130,10 @@ li {
 }
 
 .person-dialog .MuiDialog-container,
-.appt-dialog .MuiDialog-container {
+.appt-dialog .MuiDialog-container  {
   height: auto !important;
   position: relative !important;
+  //top: 50px !important;
 }
 
 .MuiPaper-root {
@@ -112,13 +141,14 @@ li {
 }
 
 .MuiDialogContent-root {
-  overflow-y: hidden !important;
+ overflow-y: hidden !important;
 }
 
-.person-dialog .MuiBox-root,
+.person-dialog .MuiBox-root, 
 .appt-dialog .MuiBox-root {
   padding: 0 !important;
 }
+
 
 .MuiDataGrid-root .MuiDataGrid-cell:focus {
   outline: none !important;
@@ -129,4 +159,3 @@ li {
   font-size: 1.8em;
   letter-spacing: 0.05em;
 }
-/*# sourceMappingURL=App.css.map */
