@@ -48,8 +48,7 @@ const AppointmentDialog = () => {
       headers: { 
         'Content-Type': 'application/json',
         'X-CSRFToken': getCookie('csrftoken')
-      },
-      withCredentials: true
+      }
     }
     try {
       await axios.delete(`${apiUrl}appointments/${id}/`, params)

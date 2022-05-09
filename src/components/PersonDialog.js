@@ -74,8 +74,7 @@ const PersonDialog = ({type}) => {
       headers: { 
         'Content-Type': 'application/json',
         'X-CSRFToken': getCookie('csrftoken')
-      },
-      withCredentials: true
+      }
     }
     try {
       await axios.delete(`${apiUrl}${type}/${id}/`, params);

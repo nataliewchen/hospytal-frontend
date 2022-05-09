@@ -75,8 +75,7 @@ const DoctorForm = ({mode}) => {
         'Content-Type': 'application/json',
         'X-CSRFToken': getCookie('csrftoken')
       },
-      data: JSON.stringify(formValues),
-      withCredentials: true
+      data: JSON.stringify(formValues)
     };
     await axios(params)
       .then(response => navigate(`/doctors/${response.data.id}`))

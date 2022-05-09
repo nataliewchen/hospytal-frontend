@@ -10,7 +10,7 @@ import getCookie from '../utils/getCookie';
 import { toPyDate, toJSDate } from '../utils/convertDateTime';
 import apiUrl from '../utils/apiUrl';
 
-const PatientForm = ({mode}) => {
+const PatientForm = ({ mode }) => {
   const {id} = useParams();
   const navigate = useNavigate();
   const fields = ['firstname', 'lastname', 'birthday', 'gender', 'weight', 'height_ft', 'height_in', 'phone'];
@@ -95,8 +95,7 @@ const PatientForm = ({mode}) => {
         'Content-Type': 'application/json',
         'X-CSRFToken': getCookie('csrftoken')
       },
-      data: JSON.stringify(formValues),
-      withCredentials: true
+      data: JSON.stringify(formValues)
     };
     await axios(params)
       .then(response => navigate(`/patients/${response.data.id}`))

@@ -241,8 +241,7 @@ const AppointmentForm = ({mode}) => {
         data: JSON.stringify({
           ...formValues,
           date: toPyDate(formValues.date)
-        }),
-        withCredentials: true
+        })
       };
       axios(params)
         .then(response => navigate(`/appointments/${response.data.id}`))
