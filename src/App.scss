@@ -133,7 +133,11 @@ li {
 .appt-dialog .MuiDialog-container  {
   height: auto !important;
   position: relative !important;
-  //top: 50px !important;
+  top: 30px !important;
+
+  @include mq(sm) {
+    top: 50px !important;
+  }
 }
 
 .MuiPaper-root {

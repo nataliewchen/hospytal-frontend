@@ -105,6 +105,14 @@ li {
 .appt-dialog .MuiDialog-container {
   height: auto !important;
   position: relative !important;
+  top: 30px !important;
+}
+
+@media only screen and (min-width: 600px) {
+  .person-dialog .MuiDialog-container,
+  .appt-dialog .MuiDialog-container {
+    top: 50px !important;
+  }
 }
 
 .MuiPaper-root {

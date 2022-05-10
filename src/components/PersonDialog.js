@@ -120,7 +120,7 @@ const PersonDialog = ({type}) => {
 
 
   return (
-    <Dialog open={open} onClose={handleDialogClose} fullWidth scoll='paper' className='person-dialog'>
+    <Dialog open={open} onClose={handleDialogClose} fullWidth scroll='paper' className='person-dialog'>
       <DialogTitle>
       <Stack direction='row' justifyContent='space-between' alignItems='center'>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
