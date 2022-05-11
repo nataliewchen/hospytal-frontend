@@ -41,15 +41,13 @@ const getListData = (type, arr, width) => {
         id: appt.id,
         col1: appt.patient_name,
         col2: appt.doctor_name,
-        col3: String(appt.date) + ' ' + String(appt.formatted_time), 
-        col4: appt.status
+        col3: String(appt.date) + ' ' + String(appt.formatted_time)
     }))
 
     columns= [
       { field: 'col1', headerName: 'Patient', flex: 1},
       { field: 'col2', headerName: 'Doctor', flex: 1},
       { field: 'col3', headerName: 'Date & Time', flex: 1},
-      { field: 'col4', headerName: 'Status', flex: 1},
     ];
 
     if (width >= 700 && width < 800) {
