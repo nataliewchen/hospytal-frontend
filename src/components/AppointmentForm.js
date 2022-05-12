@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-import { Grid, Typography, Autocomplete, Button, TextField, Paper, FormControl, Stack, InputLabel, Select, MenuItem, ClickAwayListener } from '@mui/material';
+import { Grid, Typography, Autocomplete, Button, TextField, Paper, FormControl, Stack, InputLabel, Select, MenuItem } from '@mui/material';
 import DateAdapter from '@mui/lab/AdapterDateFns';
 import { LocalizationProvider, DesktopDatePicker } from '@mui/lab';
 
@@ -159,21 +159,21 @@ const AppointmentForm = ({mode}) => {
     setDateRef({ open: formValues.date });
   }
 
-  const handleDateChange = (value) => {
-    if (value) {
-        const year = toFullYear(value);
-        setFormValues(prev => ({
-          ...prev,
-          date: year > 1000 ? value : ''
-        }));
-        setFormErrors(prev => ({
-          ...prev,
-          date: false
-        }));     
-    } else {
-      setFormValues(prev => ({...prev, date: ''}));
-    }
-  }
+  // const handleDateChange = (value) => {
+  //   if (value) {
+  //       const year = toFullYear(value);
+  //       setFormValues(prev => ({
+  //         ...prev,
+  //         date: year > 1000 ? value : ''
+  //       }));
+  //       setFormErrors(prev => ({
+  //         ...prev,
+  //         date: false
+  //       }));     
+  //   } else {
+  //     setFormValues(prev => ({...prev, date: ''}));
+  //   }
+  // }
 
   const handleDateClickAway = (e) => {
     setDateRef(prev => ({ 
