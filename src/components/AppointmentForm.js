@@ -159,28 +159,22 @@ const AppointmentForm = ({mode}) => {
     setDateRef({ open: formValues.date });
   }
 
-  // const handleDateChange = (value) => {
-  //   if (value) {
-  //       const year = toFullYear(value);
-  //       setFormValues(prev => ({
-  //         ...prev,
-  //         date: year > 1000 ? value : ''
-  //       }));
-  //       setFormErrors(prev => ({
-  //         ...prev,
-  //         date: false
-  //       }));     
-  //   } else {
-  //     setFormValues(prev => ({...prev, date: ''}));
-  //   }
-  // }
-
-  const handleDateClickAway = (e) => {
-    setDateRef(prev => ({ 
-      ...prev,
-      clickaway: formValues.date
-     }));
+  const handleDateChange = (value) => {
+    if (value) {
+        const year = toFullYear(value);
+        setFormValues(prev => ({
+          ...prev,
+          date: year > 1000 ? value : ''
+        }));
+        setFormErrors(prev => ({
+          ...prev,
+          date: false
+        }));     
+    } else {
+      setFormValues(prev => ({...prev, date: ''}));
+    }
   }
+
 
 
   const handleDateAccept = (value) => {
@@ -284,7 +278,6 @@ const AppointmentForm = ({mode}) => {
         <Grid item xs={12} sm={6}>
           
             <LocalizationProvider dateAdapter={DateAdapter}>
-            {/* <ClickAwayListener onClickAway={handleDateClickAway}> */}
               <DesktopDatePicker
                 label="Date"
                 allowSameDateSelection
@@ -294,7 +287,6 @@ const AppointmentForm = ({mode}) => {
                 onChange={handleDateChange}
                 renderInput={(params) => <TextField required error={formErrors.date} fullWidth {...params} />} 
               />
-          {/* </ClickAwayListener> */}
             </LocalizationProvider>
         </Grid>
         <Grid item xs={12} sm={6}>
