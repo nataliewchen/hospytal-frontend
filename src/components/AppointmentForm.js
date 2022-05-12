@@ -284,7 +284,7 @@ const AppointmentForm = ({mode}) => {
         <Grid item xs={12} sm={6}>
           
             <LocalizationProvider dateAdapter={DateAdapter}>
-            <ClickAwayListener onClickAway={handleDateClickAway}>
+            {/* <ClickAwayListener onClickAway={handleDateClickAway}> */}
               <DesktopDatePicker
                 label="Date"
                 allowSameDateSelection
@@ -294,7 +294,7 @@ const AppointmentForm = ({mode}) => {
                 onChange={handleDateChange}
                 renderInput={(params) => <TextField required error={formErrors.date} fullWidth {...params} />} 
               />
-          </ClickAwayListener>
+          {/* </ClickAwayListener> */}
             </LocalizationProvider>
         </Grid>
         <Grid item xs={12} sm={6}>
