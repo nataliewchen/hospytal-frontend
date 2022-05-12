@@ -92,10 +92,6 @@ const AppointmentDialog = () => {
                 <TableCell>{appt.formatted_time}</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className='table-row-header'>Status:</TableCell>
-                <TableCell>{appt.status}</TableCell>
-              </TableRow>
-              <TableRow>
                 <TableCell className='table-row-header'>Notes:</TableCell>
                 <TableCell className='wide-cell'>{appt.notes}</TableCell>
               </TableRow>

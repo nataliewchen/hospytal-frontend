@@ -36,11 +36,15 @@ const PersonDialog = ({type}) => {
 
   const getAppts = async() => {
     const response = await axios.get(`${apiUrl}appointments/${type}/${id}/`);
-    const rows = response.data.map(appt => ({
-      id: appt.id,
-      col1: type === 'patients' ? appt.doctor_name : appt.patient_name,
-      col2: String(appt.date) + ' ' + String(appt.formatted_time)
-    }));
+    let rows = [];
+    if (Object.entries(response.data).length > 0) {
+      rows = response.data.map(appt => ({
+        id: appt.id,
+        col1: type === 'patients' ? appt.doctor_name : appt.patient_name,
+        col2: String(appt.date) + ' ' + String(appt.formatted_time)
+      }));
+    }
+ 
     setRows(rows);
   }
 
